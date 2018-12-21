@@ -1,0 +1,801 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Consumer  API v1.0",
+        "version": "1.0"
+    },
+    "host": "api-dev.columbia.com",
+    "basePath": "/consumers",
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "apiKeyHeader": {
+            "type": "apiKey",
+            "name": "Ocp-Apim-Subscription-Key",
+            "in": "header"
+        },
+        "apiKeyQuery": {
+            "type": "apiKey",
+            "name": "subscription-key",
+            "in": "query"
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ],
+    "paths": {
+        "/v{version}/emails/{email}/brands/{brand}/countrycodes/{countrycode}/profile": {
+            "get": {
+                "description": "Profile By Brand, Country Code and Email",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeProfileGet",
+                "summary": "Profile By Brand, Country Code and Email",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerProfile"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ]
+            },
+            "put": {
+                "description": "Profile By Brand, Country Code and Email",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeProfilePut",
+                "summary": "Profile By Brand, Country Code and Email",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cscconsumerapi.models.v2.ConsumerProfile",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerProfile"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json-patch+json",
+                    "application/json",
+                    "text/json",
+                    "application/*+json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerProfile"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ]
+            },
+            "post": {
+                "description": "This will add a new consumer into the consumer system. Consumers are tracked by region and brand.",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeProfilePost",
+                "summary": "Consumer Profile",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cscconsumerapi.models.v2.ConsumerProfile",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerProfile"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json-patch+json",
+                    "application/json",
+                    "text/json",
+                    "application/*+json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerProfile"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ]
+            }
+        },
+        "/v{version}/emails/{email}/brands/{brand}/countrycodes/{countrycode}/consent": {
+            "get": {
+                "description": "Consent By Brand and Country Code",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeConsentGet",
+                "summary": "Consent By Brand and Country Code",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerConsent"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ]
+            },
+            "put": {
+                "description": "Consumer Consent By Brand, Country Code and Email",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeConsentPut",
+                "summary": "Consumer Consent By Brand, Country Code and Email",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "cscconsumerapi.models.v2.ConsumerConsent",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerConsent"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json-patch+json",
+                    "application/json",
+                    "text/json",
+                    "application/*+json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/v{version}/emails/{email}/brands/{brand}/countrycodes/{countrycode}/loyalty": {
+            "get": {
+                "description": "Loyalty By Brand, Country Code and Email",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeLoyaltyGet",
+                "summary": "Loyalty By Brand, Country Code and Email",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerLoyalty"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ]
+            }
+        },
+        "/v{version}/emails/{email}/brands/{brand}/countrycodes/{countrycode}/newemail/{newEmail}": {
+            "put": {
+                "description": "Email By Brand, Country Code and Email",
+                "operationId": "V-versionEmailsByEmailBrandsByBrandCountrycodesByCountrycodeNewemailByNewEma",
+                "summary": "Email By Brand, Country Code and Email",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "newEmail",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/v{version}/brands/{brand}/countrycodes/{countrycode}/ids/{consumerId}/profile": {
+            "get": {
+                "operationId": "V-versionBrandsByBrandCountrycodesByCountrycodeIdsByConsumerIdProfileGet",
+                "summary": "V{versionBrandsByBrandCountrycodesByCountrycodeIdsByConsumerIdProfileGet",
+                "tags": [
+                    "Consumers"
+                ],
+                "parameters": [
+                    {
+                        "name": "brand",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "countrycode",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "consumerId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerProfile"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "cscconsumerapi.models.v2.ConsumerProfile": {
+            "required": [
+                "email",
+                "brand",
+                "countryCode"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "consumerId": {
+                    "type": "string"
+                },
+                "consentId": {
+                    "type": "string"
+                },
+                "loyaltyId": {
+                    "type": "string"
+                },
+                "enabledFlag": {
+                    "type": "boolean"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "siteId": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "middleName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "nameSuffix": {
+                    "type": "string"
+                },
+                "gender": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "communicationePreference": {
+                    "type": "string"
+                },
+                "preferredPhoneNumber": {
+                    "type": "string"
+                },
+                "consumerTypes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerType"
+                    }
+                },
+                "dates": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cscconsumerapi.models.v2.Dates"
+                    }
+                },
+                "addresses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cscconsumerapi.models.v2.Address"
+                    }
+                },
+                "consents": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerConsent"
+                    }
+                },
+                "loyalty": {
+                    "$ref": "#/definitions/cscconsumerapi.models.v2.ConsumerLoyalty"
+                },
+                "partitionKey": {
+                    "type": "string"
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.ConsumerType": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "affiliation": {
+                    "type": "string"
+                },
+                "systemName": {
+                    "type": "string"
+                },
+                "pro": {
+                    "$ref": "#/definitions/cscconsumerapi.models.v2.ProConsumer"
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.Dates": {
+            "type": "object",
+            "properties": {
+                "dateType": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string"
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.Address": {
+            "type": "object",
+            "properties": {
+                "uniqueId": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "preferredFlag": {
+                    "type": "string"
+                },
+                "street1": {
+                    "type": "string"
+                },
+                "street2": {
+                    "type": "string"
+                },
+                "street3": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "regionStateProvince": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "postalCode": {
+                    "type": "string"
+                },
+                "timeZone": {
+                    "type": "string"
+                },
+                "timeZoneOffset": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "latitude": {
+                    "format": "double",
+                    "type": "number"
+                },
+                "longitude": {
+                    "format": "double",
+                    "type": "number"
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.ConsumerConsent": {
+            "required": [
+                "email"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "consentId": {
+                    "type": "string"
+                },
+                "consumerId": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "consentChannels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/cscconsumerapi.models.v2.ConsentChannel"
+                    }
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.ConsumerLoyalty": {
+            "required": [
+                "email"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "loyaltyId": {
+                    "type": "string"
+                },
+                "consumerId": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "brand": {
+                    "type": "string"
+                },
+                "countryCode": {
+                    "type": "string"
+                },
+                "enrollInLoyaltyFlag": {
+                    "type": "boolean"
+                },
+                "enrollmentDate": {
+                    "type": "string"
+                },
+                "unenrollmentDate": {
+                    "type": "string"
+                },
+                "unenrollmentReason": {
+                    "type": "string"
+                },
+                "enrollSource": {
+                    "type": "string"
+                },
+                "storeNumber": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "retailerId": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "pointBalance": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "partitionKey": {
+                    "type": "string"
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.ProConsumer": {
+            "type": "object",
+            "properties": {
+                "memberStatus": {
+                    "type": "string"
+                },
+                "applicationDate": {
+                    "type": "string"
+                },
+                "expirationDate": {
+                    "type": "string"
+                },
+                "businessName": {
+                    "type": "string"
+                },
+                "businessDescription": {
+                    "type": "string"
+                },
+                "businessUrl": {
+                    "type": "string"
+                },
+                "businessPhone": {
+                    "type": "string"
+                },
+                "consumerType": {
+                    "type": "string"
+                }
+            }
+        },
+        "cscconsumerapi.models.v2.ConsentChannel": {
+            "type": "object",
+            "properties": {
+                "channel": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "consentType": {
+                    "type": "string"
+                },
+                "effectiveDate": {
+                    "type": "string"
+                },
+                "rescindDate": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "tags": []
+}
